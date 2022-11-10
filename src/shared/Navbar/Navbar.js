@@ -5,18 +5,18 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import logo from '../../images/logo.png'
 
 const Navbar = () => {
-  const {user,logOut}=useContext(AuthContext) 
+  const { user, logOut } = useContext(AuthContext)
 
 
 
-   /* LogOut */
-   const handaleLogout = () => {
+  /* LogOut */
+  const handaleLogout = () => {
     logOut()
-        .then(() => {
-            // console.log("Confirm LogOut");
-        }).catch(() => {
-        })
-}
+      .then(() => {
+        // console.log("Confirm LogOut");
+      }).catch(() => {
+      })
+  }
   return (
     <div>
       <nav class="bg-gray-800">
@@ -47,6 +47,7 @@ const Navbar = () => {
                   {/* <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> */}
 
                   <Link to={'/'} href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+                  <Link to={'/services'} href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Service</Link>
 
                   <Link to={'/blog'} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
                   <p>{user?.email}</p>
@@ -58,12 +59,12 @@ const Navbar = () => {
                 <div>
                   <button type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     {
-                      user?.email ? 
-                      <button onClick={handaleLogout} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        LogOut 
-                      </button>
-                      :
-                      <Link to='/login' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
+                      user?.email ?
+                        <button onClick={handaleLogout} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                          LogOut
+                        </button>
+                        :
+                        <Link to='/login' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</Link>
                     }
                   </button>
                 </div>

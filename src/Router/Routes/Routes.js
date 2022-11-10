@@ -9,28 +9,32 @@ import PriveteRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
-        path:'/',
-        element:<Main/>,
-        children:[
+        path: '/',
+        element: <Main />,
+        children: [
             {
-                path:'/',
-                element:<Home/>
+                path: '/',
+                element: <Home />
             },
             {
-                path:'/login',
-                element:<Login/>
+                path: '/login',
+                element: <Login />
             },
             {
-                path:'/signup',
-                element:<SignUp/>
+                path: '/signup',
+                element: <SignUp />
             },
             {
-                path:'/service/:id',
-                element:<PriveteRoute><ServiceBooking/></PriveteRoute>
+                path: '/services',
+                element: <PriveteRoute><ServiceBooking /></PriveteRoute>
             },
             {
-                path:'*',
-                element:<NotFound/>
+                path: '/service/:id',
+                element: <PriveteRoute><ServiceBooking /></PriveteRoute>
+            },
+            {
+                path: '*',
+                element: <NotFound />
             }
         ]
     }

@@ -50,6 +50,7 @@ const Navbar = () => {
                   <Link to={'/services'} href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Service</Link>
 
                   <Link to={'/blog'} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
+                  {user?.email && <Link to={'/dashbord'} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">DashBord</Link>}
                   <p>{user?.email}</p>
                 </div>
               </div>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import './HeroSection.css'
 
 const HeroSection = () => {
+    const user = useContext(AuthContext)
     return (
         <div>
 
@@ -23,11 +25,7 @@ const HeroSection = () => {
                                     Get Service
                                 </Link>
                             </div>
-                            <div class="mt-3 sm:mt-0 sm:ml-3">
-                                <Link to={'/login'} class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-regular rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:px-10">
-                                    Login
-                                </Link>
-                            </div>
+
                         </div>
                     </div>
                 </main>
